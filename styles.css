@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    font-family: "Segoe UI" , sans-serif;
+}
+
+#navbar{
+    background: rgb(1, 1, 106);
+    height: 100px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#navbar > h1{
+    color: white;
+    margin: 0;
+    font-size: 65px;
+    font-weight: 600;
+}
+
+#navbar > img {
+    width: 80px;
+    height: 80px;
+}
