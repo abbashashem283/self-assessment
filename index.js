@@ -46,16 +46,19 @@ function hasUpperCase(s){
     return s != s.toLowerCase();
 }
 
-function validName(name){
+function validName(){
+    name = name_field.value 
     return !(empty(name) || hasSpecialCharachters(name) || hasNumbers(name));
 }
 
-function validPassword(password){
+function validPassword(){
+    password = password_field.value
     return !empty(password) && hasNumbers(password) && hasSpecialCharachters(password)
             && hasUpperCase(password) && password.length >= 8;
 }
 
-function validEmail(email){
+function validEmail(){
+    email = email_field.value
     const at_index = email.indexOf("@")
     if(at_index == -1)
         return false
@@ -63,7 +66,8 @@ function validEmail(email){
     return !empty(email) && hasCharachter(second_half,".") && !hasCharachter(email,"-")
 }
 
-function validPhone(phone){
+function validPhone(){
+    phone = phone_field.value
     for(let i=0 ; i<phone.length; ++i){
         if(i == 2)
             continue
@@ -80,7 +84,12 @@ function showError(error_index , message){
 }
 
 function validateForm(){
-    showError(0, "sam is here")
+    if(!validName())
+        showError(0,"required field (must only consist of letters)")
+    if(!validEmail())
+        showError(1,"required field (must be a valid email format)")
+    if(!validPassword())
+        showError(2,"required field (must have 1 uppercase letter, a number, a symbol, a length > 8 charachters")        
 }
 
 
