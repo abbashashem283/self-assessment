@@ -4,22 +4,30 @@ var name_field = document.getElementById("name");
 
 
 function empty(s){
+    s = s.trim()
     return s == null || s == ""
 }
 
+function hasCharachter(s , char){
+    for(var i=0; i<s.length; ++i){
+        if(s[i] == char)
+            return true;
+    }
+    return false;
+}
+
 function hasSpecialCharachters(s){
-    var specials = "!@#$%^&*()";
-    for(var i=0 ; i<specials.length ; ++i){
-        for(var j=0 ; j<s.length ; ++j){
-            if(specials[i] == s[j])
-                return true;
-        }
+    var charachters = ['!','@','#','$','%','^','&','*','(',')','.',',']
+    var specials = new Set(charachters);
+    for(var i=0 ; i<s.length ; ++i){
+        if(specials.has(s[i]))
+            return true;
     }
     return false;
 }
 
 function hasNumbers(s){
-    for(var i=0 ; i<9 ; ++i){
+    for(var i=0 ; i<10 ; ++i){
         for(var j=0 ; j<s.length ; ++j){
             if(i.toString() == s[j])
                 return true;
@@ -28,9 +36,26 @@ function hasNumbers(s){
     return false;
 }
 
+function hasUpperCase(s){
+    return s != s.toLowerCase();
+}
+
 function validName(name){
-    name = name.trim()
     return !(empty(name) || hasSpecialCharachters(name) || hasNumbers(name));
 }
 
-console.log(validName("   "))
+function validPassword(password){
+    return !empty(password) && hasNumbers(password) && hasSpecialCharachters(password)
+            && hasUpperCase(password) && password.length >= 8;
+}
+
+function validEmail(email){
+    var at_index = email.indexOf("@")
+    if(at_index == -1)
+        return false
+    var second_half = email.substring(at_index+1)
+    return !empty(email) && hasCharachter(second_half,".") && !hasCharachter(email,"-")
+}
+
+
+
