@@ -1,10 +1,11 @@
+const form = document.getElementById("intro-form")
 const name_field = document.getElementById("name")
 const email_field = document.getElementById("email")
 const phone_field = document.getElementById("phone")
 const password_field = document.getElementById("password")
-const cpassword_field = document.getElementById("cpassword")
 const experience_field = document.getElementById("combo")
-const errors = document.getElementsByTagName("small")
+const errors = document.getElementsByClassName("error")
+const submit = document.getElementById("submit-btn")
 
 
 
@@ -47,18 +48,18 @@ function hasUpperCase(s){
 }
 
 function validName(){
-    name = name_field.value 
+    name = name_field.value.trim() 
     return !(empty(name) || hasSpecialCharachters(name) || hasNumbers(name));
 }
 
 function validPassword(){
-    password = password_field.value
+    password = password_field.value.trim()
     return !empty(password) && hasNumbers(password) && hasSpecialCharachters(password)
             && hasUpperCase(password) && password.length >= 8;
 }
 
 function validEmail(){
-    email = email_field.value
+    email = email_field.value.trim()
     const at_index = email.indexOf("@")
     if(at_index == -1)
         return false
@@ -67,7 +68,7 @@ function validEmail(){
 }
 
 function validPhone(){
-    phone = phone_field.value
+    phone = phone_field.value.trim()
     for(let i=0 ; i<phone.length; ++i){
         if(i == 2)
             continue
@@ -78,8 +79,13 @@ function validPhone(){
 }
 
 
+function validForm(){
+    return (validName() && validPhone() && validEmail() && validPassword())
+}
+
+
 function showError(error_index , message){
-    errors[error_index].classList.toggle("hidden");
+    errors[error_index].style.visibility = "visible";
     errors[error_index].innerText = "* "+message;
 }
 
@@ -88,9 +94,30 @@ function validateForm(){
         showError(0,"required field (must only consist of letters)")
     if(!validEmail())
         showError(1,"required field (must be a valid email format)")
+    if(!validPhone())
+        showError(2, "required (phone")    
     if(!validPassword())
-        showError(2,"required field (must have 1 uppercase letter, a number, a symbol, a length > 8 charachters")        
+        showError(3,"required")       
 }
+
+
+submit.addEventListener("click" , 
+    function(event) {
+        event.preventDefault();
+        if(validForm()){
+            let data = {
+                name: name_field.value,
+                email: email_field.value,
+                phone: phone_field.value,
+                password: password_field.value,
+                experience: experience_field.value
+            }
+            form.submit();
+        }else{
+            validateForm()
+        }
+    }
+)
 
 
 
