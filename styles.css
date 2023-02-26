@@ -80,3 +80,11 @@ label{
     border: solid 1px rgb(24,17,153);
     color:rgb(1, 1, 106);
 }
+
+.error{
+    color: red;
+}
+
+.hidden{
+    visibility: hidden;
+}

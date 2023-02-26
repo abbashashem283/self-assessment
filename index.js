@@ -1,4 +1,10 @@
-var name_field = document.getElementById("name");
+const name_field = document.getElementById("name")
+const email_field = document.getElementById("email")
+const phone_field = document.getElementById("phone")
+const password_field = document.getElementById("password")
+const cpassword_field = document.getElementById("cpassword")
+const experience_field = document.getElementById("combo")
+const errors = document.getElementsByTagName("small")
 
 
 
@@ -9,7 +15,7 @@ function empty(s){
 }
 
 function hasCharachter(s , char){
-    for(var i=0; i<s.length; ++i){
+    for(let i=0; i<s.length; ++i){
         if(s[i] == char)
             return true;
     }
@@ -17,9 +23,9 @@ function hasCharachter(s , char){
 }
 
 function hasSpecialCharachters(s){
-    var charachters = ['!','@','#','$','%','^','&','*','(',')','.',',']
-    var specials = new Set(charachters);
-    for(var i=0 ; i<s.length ; ++i){
+    const charachters = ['!','@','#','$','%','^','&','*','(',')','.',',']
+    const specials = new Set(charachters);
+    for(let i=0 ; i<s.length ; ++i){
         if(specials.has(s[i]))
             return true;
     }
@@ -27,8 +33,8 @@ function hasSpecialCharachters(s){
 }
 
 function hasNumbers(s){
-    for(var i=0 ; i<10 ; ++i){
-        for(var j=0 ; j<s.length ; ++j){
+    for(let i=0 ; i<10 ; ++i){
+        for(let j=0 ; j<s.length ; ++j){
             if(i.toString() == s[j])
                 return true;
         }
@@ -50,11 +56,31 @@ function validPassword(password){
 }
 
 function validEmail(email){
-    var at_index = email.indexOf("@")
+    const at_index = email.indexOf("@")
     if(at_index == -1)
         return false
-    var second_half = email.substring(at_index+1)
+    const second_half = email.substring(at_index+1)
     return !empty(email) && hasCharachter(second_half,".") && !hasCharachter(email,"-")
+}
+
+function validPhone(phone){
+    for(let i=0 ; i<phone.length; ++i){
+        if(i == 2)
+            continue
+        if(!hasNumbers(phone[i]))
+            return false
+    }
+    return phone[2] == "/" && phone.length == 9;
+}
+
+
+function showError(error_index , message){
+    errors[error_index].classList.toggle("hidden");
+    errors[error_index].innerText = "* "+message;
+}
+
+function validateForm(){
+    showError(0, "sam is here")
 }
 
 

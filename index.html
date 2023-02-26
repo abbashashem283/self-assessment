@@ -25,17 +25,40 @@
             </p>
         </div>
         <form target="page2.html" id="intro-form">
-            <label for="name">Name:</label>
+            <label for="name">
+                Name:
+                <small class="error hidden">* Invalid</small>
+            </label>
             <input id="name" class="form-input" type="text"/>
-            <label for="email">Email:</label>
+
+            <label for="email">
+                Email:
+                <small class="error hidden">* Invalid</small>
+            </label>
             <input id="email" class="form-input" type="email"/>
-            <label for="phone">Phone:</label>
-            <input id="phone" class="form-input" type="text" placeholder="XX-XXXXX"/>
-            <label for="password">Password:</label>
+
+            <label for="phone">
+                Phone:
+                <small class="error hidden">* Invalid</small>
+            </label>
+            <input id="phone" class="form-input" type="text" placeholder="XX/XXXXX"/>
+
+            <label for="password">
+                Password:
+                <small class="error hidden">* Invalid</small>
+            </label>
             <input id="password" class="form-input" type="password"/>
-            <label for="cpassword">Confirm Password:</label>
+
+            <label for="cpassword">
+                Confirm Password:
+                <small class="error hidden">* Invalid</small>
+            </label>
             <input id="cpassword" class="form-input" type="password"/>
-            <label for="combo">Experience:</label>
+
+            <label for="combo">
+                Experience:
+                <small class="error hidden">* Invalid</small>
+            </label>
             <select id="combo" class="form-input form-combo">
                 <option>1-5 years</option>
                 <option>5-10 years</option>
