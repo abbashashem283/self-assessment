@@ -11,10 +11,38 @@
 <body>
     <nav id="navbar">
         <img src="images/brain.png" alt="brain"/>
-        <h1>Human Analysis</h1>
+        <h1>Programmer Analysis</h1>
     </nav>
     <div id="wrapper">
-        <h2 class="sub-title">Welcome</h2>
+        <div>
+            <h2 class="sub-title">Welcome</h2>
+            <p class="intro-par">This is a programmer's analysis test with both physical and mental
+                properties that will help you further assess yourself in many
+                charachteristics and aspects. But first, in order to know you better, we want you to fill
+                this form. Also, we would like to inform you that any information you share with us is purely
+                confidential.
+            </p>
+        </div>
+        <form target="page2.html" id="intro-form">
+            <label for="name">Name:</label>
+            <input id="name" class="form-input" type="text"/>
+            <label for="email">Email:</label>
+            <input id="email" class="form-input" type="email"/>
+            <label for="phone">Phone:</label>
+            <input id="phone" class="form-input" type="text" placeholder="XX-XXXXX"/>
+            <label for="password">Password:</label>
+            <input id="password" class="form-input" type="password"/>
+            <label for="c-password">Confirm Password:</label>
+            <input id="c-password" class="form-input" type="password"/>
+            <label for="combo">Experience:</label>
+            <select id="combo" class="form-input form-combo">
+                <option>1-5 years</option>
+                <option>5-10 years</option>
+                <option>10-15 years</option>
+                <option>>15 years</option>
+            </select>
+            <button class="form-button">START TEST!</button>
+        </form>
     </div>
 </body>
 </html>

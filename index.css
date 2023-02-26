@@ -1,3 +1,33 @@
-.sub-title{
-   font-size: 2em;
+#wrapper{
+    text-align: center;
+    font-family: "Krub" , sans-serif;
+    display: flex;
+    padding-top: 50px;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
 }
+
+
+.sub-title{
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+ }
+
+ .intro-par{
+    font-size: 20px;
+    text-align: justify;
+    line-height: 1.5;
+    margin: 0;
+ }
+
+ #intro-form{
+    box-shadow: -1px 0px 5px 2px rgba(120,108,108,0.75);
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+ }
+
