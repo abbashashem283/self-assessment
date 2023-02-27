@@ -22,42 +22,29 @@
                 Now let's get to collect even more input from you :)
             </p>
         </div>
-        <form action="page2.html" id="intro-form">
+        <form action="page3.html" id="intro-form">
             <label for="palindrome">
                 Insert a palindrome string below:
-                <small class="error">* Invalid</small>
+                <small class="result">❌</small>
             </label>
-            <input id="palindrome" class="form-input" type="text"/>
-            <button class="check">check</button>
-            <label for="email">
-                Email:
-                <small class="error">* Invalid</small>
+            <input id="palindrome" class="form-input" type="text" placeholder="you must know what palindrome is"/>
+            <button class="form-generic-button check-btn">Check</button>
+            <label for="color">
+                Your Favorite RGB color:
             </label>
-            <input id="email" class="form-input" type="email"/>
+            <input id="color" class="form-input" type="text" placeholder="In hex code"/>
 
-            <label for="phone">
-                Phone:
-                <small class="error">* Invalid</small>
+            <label for="year">
+                What year where you born in:
             </label>
-            <input id="phone" class="form-input" type="text" placeholder="XX/XXXXX"/>
+            <input id="year" class="form-input" type="text"/>
 
-            <label for="password">
-                Password:
-                <small class="error">* Invalid</small>
+            <label for="company">
+                The name of a Software company:
             </label>
-            <input id="password" class="form-input" type="password"/>
+            <input id="company" class="form-input" type="text"/>
 
-            <label for="combo">
-                Experience:
-                <small class="error">* Invalid</small>
-            </label>
-            <select id="combo" class="form-input form-combo">
-                <option>1-5 years</option>
-                <option>5-10 years</option>
-                <option>10-15 years</option>
-                <option>>15 years</option>
-            </select>
-            <button id="submit-btn" class="form-button">START TEST!</button>
+            <button id="submit-btn" class="form-button form-submit-button">START TEST!</button>
         </form>
     </div>
 </body>
