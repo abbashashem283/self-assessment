@@ -91,13 +91,13 @@ function showError(error_index , message){
 
 function validateForm(){
     if(!validName())
-        showError(0,"required field (must only consist of letters)")
+        showError(0,"please fix field format")
     if(!validEmail())
-        showError(1,"required field (must be a valid email format)")
+        showError(1,"please fix field format")
     if(!validPhone())
-        showError(2, "required (phone")    
+        showError(2, "please fix field format")    
     if(!validPassword())
-        showError(3,"required")       
+        showError(3,"please fix field format")       
 }
 
 

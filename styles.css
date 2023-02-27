@@ -82,6 +82,7 @@ label{
     color: white;
     font-size: 20px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .form-submit-button:hover{
@@ -111,4 +112,48 @@ label{
 
 .result{
     visibility: hidden;
+}
+
+
+#warning{
+    display: flex;
+    background-color: rgba(250, 55, 55, 0.5);
+    border: solid 15px red;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+
+#div-collection{
+   display: flex;
+   flex-direction: column;
+   gap: 50px;
+}
+
+.div-child{
+    border: solid 1px black;
+    border-radius: 12px;
+    background: blue;
+    height: 100px;
+    width: 300px;
+}
+
+.floating-button{
+    border: solid 3px white;
+    color: white;
+    border-radius: 12px;
+    background: blue;
+    padding: 5px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.closing-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
